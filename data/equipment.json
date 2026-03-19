@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "EQ-0200",
+    "name": "Battery Rack-661",
+    "width": 28.0,
+    "height": 72.7,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0228",
+    "name": "Compressor-430",
+    "width": 134.5,
+    "height": 87.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0244",
+    "name": "Heat Exchanger-162",
+    "width": 180.5,
+    "height": 63.3,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0049",
+    "name": "HMI Panel-507",
+    "width": 103.3,
+    "height": 140.2,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0162",
+    "name": "UPS-172",
+    "width": 53.0,
+    "height": 104.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0021",
+    "name": "Breaker-353",
+    "width": 122.8,
+    "height": 200.6,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0136",
+    "name": "Thermocouple-852",
+    "width": 80.3,
+    "height": 122.1,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0144",
+    "name": "Transformer-863",
+    "width": 33.7,
+    "height": 99.4,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0171",
+    "name": "Chiller-254",
+    "width": 115.4,
+    "height": 132.9,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0133",
+    "name": "Generator-863",
+    "width": 229.6,
+    "height": 133.9,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0292",
+    "name": "Chiller-538",
+    "width": 39.2,
+    "height": 32.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0028",
+    "name": "UPS-283",
+    "width": 70.8,
+    "height": 191.1,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0031",
+    "name": "Valve-298",
+    "width": 35.7,
+    "height": 100.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0072",
+    "name": "Breaker-986",
+    "width": 178.2,
+    "height": 100.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0044",
+    "name": "Controller-671",
+    "width": 64.2,
+    "height": 20,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0259",
+    "name": "Actuator-243",
+    "width": 218.5,
+    "height": 95.2,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0138",
+    "name": "Generator-407",
+    "width": 99.6,
+    "height": 80.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0128",
+    "name": "Valve-928",
+    "width": 52.0,
+    "height": 36.4,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0178",
+    "name": "Breaker-238",
+    "width": 99.5,
+    "height": 153.6,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0000",
+    "name": "Access Point-777",
+    "width": 134.3,
+    "height": 42.7,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0279",
+    "name": "RTU-201",
+    "width": 167.2,
+    "height": 171.2,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0257",
+    "name": "Transformer-686",
+    "width": 102.5,
+    "height": 155.0,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0255",
+    "name": "Valve-406",
+    "width": 201.4,
+    "height": 101.2,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0109",
+    "name": "Valve-402",
+    "width": 147.9,
+    "height": 45.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0041",
+    "name": "Valve-811",
+    "width": 119.5,
+    "height": 58.5,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0095",
+    "name": "Compressor-342",
+    "width": 124.9,
+    "height": 184.7,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0167",
+    "name": "Camera-171",
+    "width": 124.9,
+    "height": 142.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0196",
+    "name": "Camera-819",
+    "width": 128.8,
+    "height": 198.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0066",
+    "name": "Sensor-615",
+    "width": 137.8,
+    "height": 40.8,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0135",
+    "name": "Thermocouple-155",
+    "width": 291.1,
+    "height": 96.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0075",
+    "name": "Pressure Gauge-446",
+    "width": 68.2,
+    "height": 179.4,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0156",
+    "name": "Battery Rack-263",
+    "width": 64.2,
+    "height": 66.9,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0131",
+    "name": "Transformer-704",
+    "width": 30.9,
+    "height": 55.0,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0165",
+    "name": "Battery Rack-450",
+    "width": 95.0,
+    "height": 257.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0007",
+    "name": "Battery Rack-238",
+    "width": 98.6,
+    "height": 221.9,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0277",
+    "name": "Battery Rack-737",
+    "width": 95.8,
+    "height": 131.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0145",
+    "name": "Generator-190",
+    "width": 201.9,
+    "height": 122.3,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0290",
+    "name": "Sensor-255",
+    "width": 202.8,
+    "height": 145.7,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0238",
+    "name": "RTU-641",
+    "width": 227.2,
+    "height": 105.7,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0195",
+    "name": "Motor-933",
+    "width": 139.0,
+    "height": 108.9,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0151",
+    "name": "Compressor-396",
+    "width": 127.5,
+    "height": 253.4,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0093",
+    "name": "Fan-106",
+    "width": 131.7,
+    "height": 175.2,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0267",
+    "name": "Fan-471",
+    "width": 107.4,
+    "height": 112.5,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0089",
+    "name": "Motor-819",
+    "width": 91.2,
+    "height": 35.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0248",
+    "name": "Thermocouple-112",
+    "width": 42.0,
+    "height": 118.0,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0127",
+    "name": "UPS-843",
+    "width": 53.0,
+    "height": 174.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0216",
+    "name": "Breaker-578",
+    "width": 95.0,
+    "height": 77.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0110",
+    "name": "Switch-745",
+    "width": 84.8,
+    "height": 55.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0220",
+    "name": "Compressor-297",
+    "width": 111.5,
+    "height": 191.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0120",
+    "name": "Transformer-931",
+    "width": 112.5,
+    "height": 67.3,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0229",
+    "name": "Valve-460",
+    "width": 117.8,
+    "height": 175.5,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0143",
+    "name": "UPS-579",
+    "width": 33.3,
+    "height": 28.9,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0201",
+    "name": "Pressure Gauge-924",
+    "width": 191.4,
+    "height": 151.3,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0022",
+    "name": "Switch-223",
+    "width": 110.7,
+    "height": 52.3,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0035",
+    "name": "Sensor-554",
+    "width": 148.5,
+    "height": 72.9,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0163",
+    "name": "Camera-109",
+    "width": 125.2,
+    "height": 94.5,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0215",
+    "name": "Generator-361",
+    "width": 110.5,
+    "height": 32.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0160",
+    "name": "Transformer-879",
+    "width": 72.7,
+    "height": 206.5,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0148",
+    "name": "Transformer-322",
+    "width": 109.1,
+    "height": 82.5,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0024",
+    "name": "Motor-970",
+    "width": 89.7,
+    "height": 185.6,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0005",
+    "name": "Pressure Gauge-545",
+    "width": 76.5,
+    "height": 184.2,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0185",
+    "name": "Transformer-823",
+    "width": 104.3,
+    "height": 234.6,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0069",
+    "name": "Actuator-710",
+    "width": 203.9,
+    "height": 63.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0243",
+    "name": "Switch-257",
+    "width": 121.0,
+    "height": 46.2,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0214",
+    "name": "Battery Rack-178",
+    "width": 33.0,
+    "height": 42.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0126",
+    "name": "RTU-797",
+    "width": 34.9,
+    "height": 47.4,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0101",
+    "name": "Actuator-924",
+    "width": 202.1,
+    "height": 157.2,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0047",
+    "name": "Fan-366",
+    "width": 101.2,
+    "height": 266.8,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0042",
+    "name": "Pressure Gauge-707",
+    "width": 94.5,
+    "height": 175.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0159",
+    "name": "Battery Rack-100",
+    "width": 24.8,
+    "height": 78.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0096",
+    "name": "Heat Exchanger-949",
+    "width": 51.5,
+    "height": 155.1,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0004",
+    "name": "Pressure Gauge-581",
+    "width": 134.3,
+    "height": 203.2,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0088",
+    "name": "Heat Exchanger-235",
+    "width": 218.4,
+    "height": 103.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0179",
+    "name": "Actuator-755",
+    "width": 50.7,
+    "height": 36.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0225",
+    "name": "Heat Exchanger-430",
+    "width": 27.9,
+    "height": 34.7,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0203",
+    "name": "Motor-333",
+    "width": 133.5,
+    "height": 98.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0129",
+    "name": "Pump-639",
+    "width": 57.5,
+    "height": 152.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0253",
+    "name": "Breaker-425",
+    "width": 126.2,
+    "height": 94.1,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0287",
+    "name": "Sensor-530",
+    "width": 140.2,
+    "height": 101.1,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0018",
+    "name": "Flow Meter-540",
+    "width": 40.8,
+    "height": 49.8,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0076",
+    "name": "Compressor-346",
+    "width": 88.8,
+    "height": 74.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0020",
+    "name": "Access Point-889",
+    "width": 234.4,
+    "height": 119.4,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0197",
+    "name": "Heat Exchanger-893",
+    "width": 89.5,
+    "height": 41.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0046",
+    "name": "Generator-927",
+    "width": 44.8,
+    "height": 39.1,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0172",
+    "name": "Fan-578",
+    "width": 174.8,
+    "height": 61.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0074",
+    "name": "Compressor-202",
+    "width": 254.1,
+    "height": 90.5,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0119",
+    "name": "Actuator-422",
+    "width": 78.1,
+    "height": 192.2,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0015",
+    "name": "Pressure Gauge-234",
+    "width": 157.6,
+    "height": 46.4,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0146",
+    "name": "Sensor-925",
+    "width": 71.0,
+    "height": 62.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0181",
+    "name": "Sensor-791",
+    "width": 67.3,
+    "height": 162.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0064",
+    "name": "Generator-527",
+    "width": 46.1,
+    "height": 93.1,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0063",
+    "name": "RTU-987",
+    "width": 174.8,
+    "height": 106.4,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0108",
+    "name": "VFD-983",
+    "width": 124.9,
+    "height": 71.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0061",
+    "name": "PLC-722",
+    "width": 49.4,
+    "height": 159.6,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0269",
+    "name": "Heat Exchanger-855",
+    "width": 85.7,
+    "height": 133.7,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0149",
+    "name": "Battery Rack-823",
+    "width": 105.5,
+    "height": 220.7,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0017",
+    "name": "Fan-730",
+    "width": 126.2,
+    "height": 229.8,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0027",
+    "name": "Transformer-529",
+    "width": 152.5,
+    "height": 44.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0184",
+    "name": "Heat Exchanger-950",
+    "width": 146.0,
+    "height": 195.4,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0177",
+    "name": "Motor-729",
+    "width": 109.8,
+    "height": 203.9,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0002",
+    "name": "Breaker-221",
+    "width": 70.2,
+    "height": 23.5,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0205",
+    "name": "Battery Rack-996",
+    "width": 121.4,
+    "height": 75.2,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0106",
+    "name": "Access Point-944",
+    "width": 34.1,
+    "height": 64.3,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0264",
+    "name": "Sensor-579",
+    "width": 59.3,
+    "height": 87.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0118",
+    "name": "Pump-252",
+    "width": 100.4,
+    "height": 221.5,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0098",
+    "name": "Access Point-539",
+    "width": 70.3,
+    "height": 26.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0104",
+    "name": "Fan-875",
+    "width": 185.2,
+    "height": 113.7,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0139",
+    "name": "RTU-539",
+    "width": 140.7,
+    "height": 58.5,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0097",
+    "name": "Generator-643",
+    "width": 20.3,
+    "height": 66.1,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0191",
+    "name": "Thermocouple-795",
+    "width": 246.4,
+    "height": 73.8,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0212",
+    "name": "Access Point-594",
+    "width": 120.4,
+    "height": 132.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0103",
+    "name": "Motor-261",
+    "width": 78.4,
+    "height": 187.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0073",
+    "name": "UPS-976",
+    "width": 31.5,
+    "height": 60.8,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0188",
+    "name": "Controller-389",
+    "width": 69.4,
+    "height": 121.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0052",
+    "name": "Motor-419",
+    "width": 201.5,
+    "height": 93.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0247",
+    "name": "Switch-864",
+    "width": 69.0,
+    "height": 213.4,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0230",
+    "name": "Switch-581",
+    "width": 108.3,
+    "height": 282.5,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0065",
+    "name": "RTU-719",
+    "width": 24.7,
+    "height": 59.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0054",
+    "name": "Battery Rack-659",
+    "width": 125.2,
+    "height": 226.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0260",
+    "name": "PLC-834",
+    "width": 116.5,
+    "height": 77.2,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0034",
+    "name": "Camera-100",
+    "width": 113.1,
+    "height": 47.1,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0254",
+    "name": "Pump-871",
+    "width": 167.7,
+    "height": 59.1,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0278",
+    "name": "Heat Exchanger-958",
+    "width": 76.1,
+    "height": 39.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0140",
+    "name": "Pressure Gauge-340",
+    "width": 133.7,
+    "height": 198.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0038",
+    "name": "Controller-896",
+    "width": 140.9,
+    "height": 60.1,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0190",
+    "name": "Flow Meter-322",
+    "width": 74.2,
+    "height": 50.7,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0193",
+    "name": "Controller-363",
+    "width": 138.4,
+    "height": 233.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0239",
+    "name": "Heat Exchanger-117",
+    "width": 99.4,
+    "height": 122.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0227",
+    "name": "Motor-611",
+    "width": 176.2,
+    "height": 169.2,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0147",
+    "name": "PLC-126",
+    "width": 138.1,
+    "height": 95.0,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0192",
+    "name": "Pressure Gauge-825",
+    "width": 115.3,
+    "height": 117.0,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0115",
+    "name": "Pump-744",
+    "width": 157.9,
+    "height": 90.1,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0175",
+    "name": "Sensor-921",
+    "width": 239.1,
+    "height": 81.4,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0240",
+    "name": "Motor-940",
+    "width": 66.8,
+    "height": 63.2,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0241",
+    "name": "Controller-563",
+    "width": 35.4,
+    "height": 37.2,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0100",
+    "name": "Thermocouple-144",
+    "width": 101.0,
+    "height": 250.2,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0266",
+    "name": "UPS-570",
+    "width": 87.3,
+    "height": 229.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0291",
+    "name": "UPS-947",
+    "width": 104.1,
+    "height": 39.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0288",
+    "name": "Fan-842",
+    "width": 111.9,
+    "height": 38.2,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0213",
+    "name": "Breaker-169",
+    "width": 75.6,
+    "height": 218.7,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0246",
+    "name": "Pressure Gauge-328",
+    "width": 70.8,
+    "height": 209.4,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0256",
+    "name": "Sensor-686",
+    "width": 324.5,
+    "height": 95.5,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0237",
+    "name": "Sensor-247",
+    "width": 197.3,
+    "height": 146.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0209",
+    "name": "Generator-616",
+    "width": 114.3,
+    "height": 164.9,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0297",
+    "name": "Motor-307",
+    "width": 98.9,
+    "height": 110.4,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0039",
+    "name": "Valve-744",
+    "width": 56.5,
+    "height": 29.3,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0153",
+    "name": "Compressor-923",
+    "width": 117.5,
+    "height": 177.6,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0013",
+    "name": "Chiller-658",
+    "width": 109.0,
+    "height": 267.2,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0232",
+    "name": "Heat Exchanger-927",
+    "width": 84.0,
+    "height": 77.4,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0078",
+    "name": "Fan-917",
+    "width": 66.8,
+    "height": 82.6,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0016",
+    "name": "UPS-473",
+    "width": 69.0,
+    "height": 26.5,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0251",
+    "name": "Motor-256",
+    "width": 155.5,
+    "height": 156.7,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0019",
+    "name": "VFD-875",
+    "width": 195.4,
+    "height": 159.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0026",
+    "name": "Controller-608",
+    "width": 127.3,
+    "height": 125.5,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0053",
+    "name": "Sensor-879",
+    "width": 45.2,
+    "height": 112.9,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0137",
+    "name": "Flow Meter-752",
+    "width": 76.4,
+    "height": 209.3,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0202",
+    "name": "HMI Panel-437",
+    "width": 157.3,
+    "height": 105.9,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0094",
+    "name": "Compressor-149",
+    "width": 63.0,
+    "height": 123.5,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0283",
+    "name": "Flow Meter-917",
+    "width": 153.2,
+    "height": 205.0,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0284",
+    "name": "Flow Meter-253",
+    "width": 140.5,
+    "height": 71.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0067",
+    "name": "Chiller-887",
+    "width": 275.7,
+    "height": 98.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0071",
+    "name": "Pressure Gauge-959",
+    "width": 139.9,
+    "height": 106.9,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0221",
+    "name": "Sensor-976",
+    "width": 180.4,
+    "height": 68.6,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0231",
+    "name": "Actuator-495",
+    "width": 28.7,
+    "height": 33.2,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0233",
+    "name": "UPS-158",
+    "width": 52.5,
+    "height": 47.5,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0289",
+    "name": "HMI Panel-561",
+    "width": 83.8,
+    "height": 195.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0158",
+    "name": "UPS-286",
+    "width": 32.9,
+    "height": 77.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0122",
+    "name": "Sensor-403",
+    "width": 36.8,
+    "height": 32.4,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0280",
+    "name": "Battery Rack-102",
+    "width": 150.1,
+    "height": 62.1,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0023",
+    "name": "Controller-772",
+    "width": 101.9,
+    "height": 59.2,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0293",
+    "name": "Battery Rack-655",
+    "width": 57.3,
+    "height": 87.8,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0032",
+    "name": "Breaker-849",
+    "width": 25.6,
+    "height": 50.9,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0091",
+    "name": "Generator-493",
+    "width": 23.3,
+    "height": 44.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0272",
+    "name": "Motor-905",
+    "width": 207.7,
+    "height": 117.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0173",
+    "name": "Heat Exchanger-843",
+    "width": 122.4,
+    "height": 238.6,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0112",
+    "name": "Breaker-810",
+    "width": 239.2,
+    "height": 127.2,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0081",
+    "name": "Switch-472",
+    "width": 56.1,
+    "height": 183.9,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0174",
+    "name": "Compressor-511",
+    "width": 177.5,
+    "height": 170.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0010",
+    "name": "Thermocouple-596",
+    "width": 53.7,
+    "height": 78.2,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0161",
+    "name": "Breaker-241",
+    "width": 156.9,
+    "height": 73.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0087",
+    "name": "Heat Exchanger-997",
+    "width": 156.3,
+    "height": 86.8,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0084",
+    "name": "Access Point-301",
+    "width": 238.9,
+    "height": 89.1,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0082",
+    "name": "Generator-814",
+    "width": 97.7,
+    "height": 56.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0187",
+    "name": "Compressor-914",
+    "width": 178.0,
+    "height": 124.9,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0265",
+    "name": "Actuator-332",
+    "width": 53.2,
+    "height": 110.9,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0168",
+    "name": "HMI Panel-130",
+    "width": 122.0,
+    "height": 247.8,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0043",
+    "name": "Compressor-297",
+    "width": 58.9,
+    "height": 83.7,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0025",
+    "name": "Valve-601",
+    "width": 28.7,
+    "height": 35.4,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0060",
+    "name": "Pressure Gauge-653",
+    "width": 176.2,
+    "height": 94.5,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0113",
+    "name": "Flow Meter-192",
+    "width": 61.7,
+    "height": 102.1,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0124",
+    "name": "VFD-301",
+    "width": 150.8,
+    "height": 54.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0003",
+    "name": "Thermocouple-607",
+    "width": 60.1,
+    "height": 192.3,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0114",
+    "name": "Pressure Gauge-223",
+    "width": 20.7,
+    "height": 50.8,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0176",
+    "name": "Pump-153",
+    "width": 57.7,
+    "height": 64.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0090",
+    "name": "Sensor-472",
+    "width": 120.2,
+    "height": 62.1,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0086",
+    "name": "Thermocouple-447",
+    "width": 210.1,
+    "height": 112.1,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0048",
+    "name": "Compressor-785",
+    "width": 114.7,
+    "height": 196.4,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0222",
+    "name": "VFD-306",
+    "width": 197.0,
+    "height": 142.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0186",
+    "name": "UPS-465",
+    "width": 135.7,
+    "height": 167.4,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0132",
+    "name": "Switch-157",
+    "width": 78.8,
+    "height": 117.8,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0276",
+    "name": "Generator-758",
+    "width": 170.4,
+    "height": 52.3,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0157",
+    "name": "Motor-767",
+    "width": 79.5,
+    "height": 152.9,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0219",
+    "name": "Fan-738",
+    "width": 76.9,
+    "height": 115.5,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0117",
+    "name": "PLC-987",
+    "width": 145.5,
+    "height": 215.5,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0083",
+    "name": "Pressure Gauge-795",
+    "width": 68.5,
+    "height": 21.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0249",
+    "name": "Controller-943",
+    "width": 106.6,
+    "height": 84.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0282",
+    "name": "UPS-188",
+    "width": 155.1,
+    "height": 102.9,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0250",
+    "name": "Thermocouple-998",
+    "width": 138.0,
+    "height": 103.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0080",
+    "name": "Valve-794",
+    "width": 96.7,
+    "height": 149.2,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0182",
+    "name": "Chiller-475",
+    "width": 115.5,
+    "height": 78.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0062",
+    "name": "Compressor-389",
+    "width": 56.3,
+    "height": 33.8,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0274",
+    "name": "Thermocouple-530",
+    "width": 105.4,
+    "height": 48.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0298",
+    "name": "Pressure Gauge-653",
+    "width": 47.2,
+    "height": 36.7,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0224",
+    "name": "Controller-493",
+    "width": 56.7,
+    "height": 46.1,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0275",
+    "name": "Transformer-272",
+    "width": 84.6,
+    "height": 190.7,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0218",
+    "name": "Chiller-795",
+    "width": 159.7,
+    "height": 49.3,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0111",
+    "name": "Motor-392",
+    "width": 57.2,
+    "height": 44.7,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0242",
+    "name": "RTU-146",
+    "width": 37.5,
+    "height": 119.0,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0169",
+    "name": "Breaker-351",
+    "width": 85.2,
+    "height": 281.4,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0130",
+    "name": "VFD-283",
+    "width": 36.9,
+    "height": 41.8,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0295",
+    "name": "Fan-694",
+    "width": 77.2,
+    "height": 129.2,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0070",
+    "name": "Battery Rack-220",
+    "width": 119.1,
+    "height": 262.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0057",
+    "name": "Generator-140",
+    "width": 114.0,
+    "height": 256.3,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0059",
+    "name": "Access Point-810",
+    "width": 154.1,
+    "height": 192.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0155",
+    "name": "PLC-549",
+    "width": 65.9,
+    "height": 51.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0141",
+    "name": "Camera-606",
+    "width": 54.5,
+    "height": 112.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0271",
+    "name": "Flow Meter-872",
+    "width": 20.3,
+    "height": 45.9,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0036",
+    "name": "VFD-893",
+    "width": 151.6,
+    "height": 80.1,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0142",
+    "name": "Fan-505",
+    "width": 98.9,
+    "height": 172.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0235",
+    "name": "Switch-982",
+    "width": 43.3,
+    "height": 65.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0037",
+    "name": "Sensor-808",
+    "width": 128.6,
+    "height": 246.3,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0286",
+    "name": "Breaker-524",
+    "width": 69.2,
+    "height": 94.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0123",
+    "name": "Chiller-531",
+    "width": 119.8,
+    "height": 132.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0056",
+    "name": "Compressor-887",
+    "width": 149.5,
+    "height": 93.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0294",
+    "name": "UPS-665",
+    "width": 115.1,
+    "height": 82.1,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0150",
+    "name": "UPS-236",
+    "width": 117.1,
+    "height": 88.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0116",
+    "name": "Breaker-880",
+    "width": 52.0,
+    "height": 73.3,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0012",
+    "name": "Camera-510",
+    "width": 198.6,
+    "height": 65.2,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0030",
+    "name": "Camera-839",
+    "width": 182.7,
+    "height": 132.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0223",
+    "name": "Pressure Gauge-160",
+    "width": 42.6,
+    "height": 53.8,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0009",
+    "name": "PLC-339",
+    "width": 46.6,
+    "height": 31.5,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0152",
+    "name": "Pressure Gauge-236",
+    "width": 43.6,
+    "height": 76.9,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0217",
+    "name": "Pressure Gauge-990",
+    "width": 159.5,
+    "height": 84.7,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0194",
+    "name": "Heat Exchanger-135",
+    "width": 155.3,
+    "height": 118.9,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0183",
+    "name": "Heat Exchanger-241",
+    "width": 96.1,
+    "height": 92.3,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0099",
+    "name": "Pressure Gauge-701",
+    "width": 23.7,
+    "height": 41.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0102",
+    "name": "VFD-473",
+    "width": 171.3,
+    "height": 92.5,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0234",
+    "name": "Pump-361",
+    "width": 78.3,
+    "height": 108.5,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0001",
+    "name": "Breaker-848",
+    "width": 25.4,
+    "height": 48.4,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0125",
+    "name": "Pump-616",
+    "width": 151.4,
+    "height": 211.9,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0211",
+    "name": "VFD-309",
+    "width": 51.9,
+    "height": 50.5,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0166",
+    "name": "Fan-431",
+    "width": 56.6,
+    "height": 138.0,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0006",
+    "name": "Compressor-404",
+    "width": 187.3,
+    "height": 128.2,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0206",
+    "name": "Thermocouple-643",
+    "width": 111.4,
+    "height": 248.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0208",
+    "name": "Access Point-265",
+    "width": 110.7,
+    "height": 241.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0068",
+    "name": "Flow Meter-837",
+    "width": 158.6,
+    "height": 67.0,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0050",
+    "name": "Valve-102",
+    "width": 60.2,
+    "height": 178.9,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0198",
+    "name": "VFD-234",
+    "width": 119.1,
+    "height": 46.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0273",
+    "name": "Battery Rack-626",
+    "width": 194.0,
+    "height": 133.7,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0051",
+    "name": "Transformer-948",
+    "width": 20,
+    "height": 54.4,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0045",
+    "name": "Pump-454",
+    "width": 154.6,
+    "height": 73.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0170",
+    "name": "Chiller-876",
+    "width": 37.9,
+    "height": 74.7,
+    "priority": 5
+  },
+  {
+    "id": "EQ-0014",
+    "name": "Actuator-764",
+    "width": 300.3,
+    "height": 104.1,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0058",
+    "name": "Pressure Gauge-667",
+    "width": 63.0,
+    "height": 116.8,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0092",
+    "name": "Sensor-232",
+    "width": 66.1,
+    "height": 183.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0055",
+    "name": "Pressure Gauge-124",
+    "width": 27.8,
+    "height": 64.1,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0270",
+    "name": "Flow Meter-838",
+    "width": 126.5,
+    "height": 218.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0121",
+    "name": "VFD-417",
+    "width": 137.2,
+    "height": 167.6,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0077",
+    "name": "Camera-771",
+    "width": 33.0,
+    "height": 69.5,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0040",
+    "name": "Pressure Gauge-973",
+    "width": 95.9,
+    "height": 293.9,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0204",
+    "name": "Controller-286",
+    "width": 22.8,
+    "height": 41.0,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0245",
+    "name": "Motor-848",
+    "width": 101.4,
+    "height": 220.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0008",
+    "name": "Camera-826",
+    "width": 25.0,
+    "height": 40.2,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0079",
+    "name": "VFD-118",
+    "width": 226.0,
+    "height": 140.4,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0011",
+    "name": "HMI Panel-737",
+    "width": 174.8,
+    "height": 50.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0268",
+    "name": "HMI Panel-772",
+    "width": 200.8,
+    "height": 149.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0105",
+    "name": "Camera-475",
+    "width": 86.5,
+    "height": 115.9,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0210",
+    "name": "Flow Meter-892",
+    "width": 51.0,
+    "height": 30.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0226",
+    "name": "Fan-800",
+    "width": 66.0,
+    "height": 91.7,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0262",
+    "name": "Transformer-192",
+    "width": 54.2,
+    "height": 24.8,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0134",
+    "name": "Motor-811",
+    "width": 38.2,
+    "height": 51.9,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0258",
+    "name": "Motor-698",
+    "width": 24.5,
+    "height": 44.0,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0299",
+    "name": "Fan-866",
+    "width": 42.4,
+    "height": 30.5,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0281",
+    "name": "Thermocouple-318",
+    "width": 50.3,
+    "height": 65.2,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0207",
+    "name": "Valve-407",
+    "width": 98.3,
+    "height": 58.2,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0085",
+    "name": "Breaker-499",
+    "width": 86.2,
+    "height": 236.0,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0199",
+    "name": "Switch-490",
+    "width": 241.2,
+    "height": 128.9,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0261",
+    "name": "Access Point-992",
+    "width": 82.4,
+    "height": 60.4,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0189",
+    "name": "Camera-597",
+    "width": 77.7,
+    "height": 63.2,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0154",
+    "name": "Camera-980",
+    "width": 163.0,
+    "height": 60.2,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0285",
+    "name": "Compressor-943",
+    "width": 40.9,
+    "height": 66.1,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0029",
+    "name": "Motor-953",
+    "width": 93.3,
+    "height": 29.0,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0252",
+    "name": "Pump-498",
+    "width": 50.3,
+    "height": 42.9,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0164",
+    "name": "Motor-982",
+    "width": 149.9,
+    "height": 70.1,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0296",
+    "name": "Access Point-910",
+    "width": 56.1,
+    "height": 84.6,
+    "priority": 2
+  },
+  {
+    "id": "EQ-0180",
+    "name": "Generator-154",
+    "width": 133.4,
+    "height": 139.1,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0033",
+    "name": "Breaker-381",
+    "width": 50.9,
+    "height": 107.9,
+    "priority": 4
+  },
+  {
+    "id": "EQ-0263",
+    "name": "Chiller-243",
+    "width": 92.7,
+    "height": 129.5,
+    "priority": 3
+  },
+  {
+    "id": "EQ-0236",
+    "name": "Flow Meter-702",
+    "width": 32.0,
+    "height": 50.7,
+    "priority": 1
+  },
+  {
+    "id": "EQ-0107",
+    "name": "Actuator-738",
+    "width": 61.2,
+    "height": 129.0,
+    "priority": 5
+  }
+]
