@@ -194,7 +194,7 @@ class TestPerformance:
         """100 tags + 300 equipment should complete in under 5 seconds."""
         large_tags = [
             BoundingBox(x=0, y=0, width=max(20, 30 + i * 3), height=100)
-            for i in range(100)
+            for i in range(10000)
         ]
 
         start = time.time()

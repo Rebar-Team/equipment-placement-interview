@@ -1,36 +1,13 @@
-"""
-Part 2: Equipment Placement Optimization
-==========================================
-
-Implement the assign_equipment() function below.
-
-Given a list of detected tags (placement zones) and a catalog of
-equipment, determine the optimal assignment of equipment to zones.
-
-Design considerations:
-  - Each piece of equipment has physical dimensions (width × height)
-    and a priority level (1–5, where 5 = most critical).
-  - Equipment CAN be rotated 90° if it provides a better fit.
-  - There are more equipment items than tags — not all equipment
-    will be placed.
-  - Each equipment item can be assigned to at most one tag.
-  - Every tag should receive exactly one equipment assignment
-    (if enough equipment is available).
-  - Higher-priority equipment should receive better placements.
-
-You must define an appropriate cost function that accounts for BOTH
-geometric fit and equipment priority. Populate each Assignment's
-`cost` field with your computed cost, and set `rotated` accordingly.
-
-Your solution must handle the full dataset (300 equipment, 5–15 tags
-per floor plan, 20 floor plans) efficiently — it should complete all
-20 floor plans in under 10 seconds total.
-
-Expected time: ~18 minutes
-"""
-
 from typing import List
+
+from sortedcontainers import SortedKeyList
+
 from .models import BoundingBox, Equipment, Assignment, PlacementResult
+
+
+def _compute_cost(priority: int, ar_diff: float) -> float:
+    """Cost = priority^4 * (aspect-ratio mismatch)^2."""
+    return (priority ** 4) * (ar_diff ** 2)
 
 
 def assign_equipment(
@@ -39,20 +16,58 @@ def assign_equipment(
     floorplan_path: str = "",
 ) -> PlacementResult:
     """
-    Assign equipment to tags, optimizing for geometric fit and priority.
-
-    Args:
-        tags: Detected bounding boxes from a floor plan.
-        equipment: Full catalog of available equipment.
-        floorplan_path: Path to the floor plan (for result tracking).
-
-    Returns:
-        A PlacementResult containing the assignments.
-
-    TODO: Implement this function.
-          - Define a cost function
-          - Handle equipment rotation
-          - Respect priority levels
-          - Ensure no duplicate equipment assignments
+    Greedy assignment: highest-priority equipment gets first pick of the
+    best aspect-ratio-matched tag via binary search on a SortedKeyList.
     """
-    raise NotImplementedError("Implement assign_equipment()")
+    if not tags or not equipment:
+        return PlacementResult(floorplan_path=floorplan_path)
+
+    # Sort equipment by priority desc, then by max(ar, 1/ar) desc for
+    # tie-breaking so extreme-shaped equipment picks first within a tier
+    sorted_eq = sorted(
+        equipment,
+        key=lambda e: (-e.priority, -max(e.width / e.height, e.height / e.width)),
+    )
+
+    # Maintain available tags in a sorted structure keyed by aspect ratio
+    # for O(log n) closest-AR lookup via binary search
+    available = SortedKeyList(range(len(tags)), key=lambda i: tags[i].aspect_ratio)
+
+    assignments: list[Assignment] = []
+
+    for eq in sorted_eq:
+        if not available:
+            break
+
+        eq_ar = eq.width / eq.height
+        eq_ar_rot = eq.height / eq.width
+
+        best_tag_idx = None
+        best_rotated = False
+        best_diff = float("inf")
+
+        # Check both orientations, binary search for closest AR each time
+        for ar, rotated in [(eq_ar, False), (eq_ar_rot, True)]:
+            pos = available.bisect_key_left(ar)
+            # Examine the two nearest neighbours (left and right of insertion point)
+            for p in (pos - 1, pos):
+                if 0 <= p < len(available):
+                    idx = available[p]
+                    diff = abs(tags[idx].aspect_ratio - ar)
+                    if diff < best_diff:
+                        best_diff = diff
+                        best_tag_idx = idx
+                        best_rotated = rotated
+
+        tag = tags[best_tag_idx]
+        cost = _compute_cost(eq.priority, best_diff)
+
+        assignments.append(Assignment(
+            tag=tag,
+            equipment=eq,
+            cost=cost,
+            rotated=best_rotated,
+        ))
+        available.remove(best_tag_idx)
+
+    return PlacementResult(floorplan_path=floorplan_path, assignments=assignments)

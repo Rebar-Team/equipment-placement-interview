@@ -4,6 +4,7 @@ These are provided for you — do not modify.
 """
 
 from dataclasses import dataclass, field
+from typing import List
 
 
 @dataclass
@@ -57,7 +58,7 @@ class Assignment:
 class PlacementResult:
     """Result of placing equipment into all tags on a single floor plan."""
     floorplan_path: str
-    assignments: list = field(default_factory=list)  # List[Assignment]
+    assignments: List[Assignment] = field(default_factory=list)
 
     @property
     def total_cost(self) -> float:

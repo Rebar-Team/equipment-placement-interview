@@ -1,23 +1,15 @@
 """
 Part 3: Orchestration, Visualization & Analysis
 =================================================
-
-Implement ALL functions below.
-
-This part ties everything together:
-  1. Run detection + placement across all floor plans
-  2. Render annotated floor plans for the top results
-  3. Produce a summary report
-
-The rendered images should visually prove your algorithm works by
-overlaying each assignment on the original floor plan with color-coded
-quality indicators.
-
-Expected time: ~15 minutes
 """
 
 import os
+from pathlib import Path
 from typing import List, Optional, Tuple
+
+import cv2
+import numpy as np
+
 from .models import PlacementResult
 from .loader import load_equipment, list_floorplans
 from .detection import detect_tags
@@ -29,29 +21,21 @@ from .placement import assign_equipment
 # ---------------------------------------------------------------------------
 
 def find_all_results() -> List[PlacementResult]:
-    """
-    Process all floor plans and return results sorted by mean cost.
-
-    Requirements:
-      - Load equipment ONCE (shared across all floor plans)
-      - Detect tags, assign equipment for each floor plan
-      - Sort results by mean_cost ascending
-
-    Returns:
-        List of PlacementResult objects, sorted by mean_cost (ascending).
-
-    TODO: Implement this function.
-    """
-    raise NotImplementedError("Implement find_all_results()")
+    """Process all floor plans and return results sorted by mean cost ascending."""
+    equipment = load_equipment()
+    results = []
+    for plan_path in list_floorplans():
+        tags = detect_tags(plan_path)
+        result = assign_equipment(tags, equipment, floorplan_path=plan_path)
+        results.append(result)
+    results.sort(key=lambda r: r.mean_cost)
+    return results
 
 
 def find_best_floorplan() -> Optional[PlacementResult]:
-    """
-    Return the single PlacementResult with the lowest mean cost, or None.
-
-    TODO: Implement this function.
-    """
-    raise NotImplementedError("Implement find_best_floorplan()")
+    """Return the PlacementResult with the lowest mean cost, or None."""
+    results = find_all_results()
+    return results[0] if results else None
 
 
 # ---------------------------------------------------------------------------
@@ -60,77 +44,96 @@ def find_best_floorplan() -> Optional[PlacementResult]:
 
 def cost_to_color(cost: float, max_cost: float) -> Tuple[int, int, int]:
     """
-    Map a cost value to a BGR color on a green -> yellow -> red gradient.
+    Map cost → BGR color on a green → yellow → red gradient.
 
-    - 0 cost           -> pure green  (0, 255, 0)
-    - max_cost / 2     -> yellow      (0, 255, 255)
-    - max_cost         -> pure red    (0, 0, 255)
-
-    Clamp values outside [0, max_cost]. Return BGR tuple (for OpenCV).
-
-    TODO: Implement this function.
+    Phase 1 (0 → max/2):      green → yellow  (G=255, R: 0→255)
+    Phase 2 (max/2 → max):    yellow → red     (R=255, G: 255→0)
     """
-    raise NotImplementedError("Implement cost_to_color()")
+    if max_cost <= 0:
+        return (0, 255, 0)
+    t = max(0.0, min(cost / max_cost, 1.0))
+    if t <= 0.5:
+        # green → yellow
+        r = int(255 * (t / 0.5))
+        g = 255
+    else:
+        # yellow → red
+        r = 255
+        g = int(255 * (1.0 - (t - 0.5) / 0.5))
+    return (0, g, r)
 
 
 def render_placement(result: PlacementResult, output_path: str) -> str:
-    """
-    Render an annotated floor plan showing equipment assignments.
+    """Render annotated floor plan with translucent footprints and labels."""
+    img = cv2.imread(result.floorplan_path)
+    overlay = img.copy()
 
-    For each assignment, draw on the ORIGINAL floor plan image:
-      1. A translucent equipment footprint INSIDE the tag showing the
-         equipment's actual proportions (scaled to fit within the tag,
-         preserving its aspect ratio). A perfect match fills the tag
-         entirely; a poor match shows visible dead space between the
-         footprint and the tag boundary. Color the footprint using
-         cost_to_color().
-      2. A rectangle border around the tag, colored by cost_to_color()
-         (thickness: 3px)
-      3. Text labels (on top, not translucent) showing:
-         - Equipment ID (e.g. "EQ-0042")
-         - Priority level (e.g. "P5")
-         - Whether equipment was rotated (e.g. "ROT" if rotated)
-      4. A summary overlay in the top-left corner showing:
-         - Floor plan filename
-         - Number of assignments (and how many rotated)
-         - Mean cost value
+    max_cost = max((a.cost for a in result.assignments), default=1.0) or 1.0
 
-    Hint: use cv2.addWeighted() to blend a drawn overlay onto the
-    original image for the translucent effect.
+    for a in result.assignments:
+        color = cost_to_color(a.cost, max_cost)
+        tx, ty, tw, th = a.tag.x, a.tag.y, a.tag.width, a.tag.height
 
-    Args:
-        result: A PlacementResult with assignments.
-        output_path: Where to save the annotated PNG.
+        # Compute scaled equipment footprint inside the tag
+        eq_w = a.equipment.height if a.rotated else a.equipment.width
+        eq_h = a.equipment.width if a.rotated else a.equipment.height
+        scale = min(tw / eq_w, th / eq_h)
+        fw = int(eq_w * scale)
+        fh = int(eq_h * scale)
+        fx = tx + (tw - fw) // 2
+        fy = ty + (th - fh) // 2
 
-    Returns:
-        The output_path.
+        # Translucent footprint
+        cv2.rectangle(overlay, (fx, fy), (fx + fw, fy + fh), color, -1)
 
-    TODO: Implement this function.
-    """
-    raise NotImplementedError("Implement render_placement()")
+        # Tag border (on overlay so it blends too)
+        cv2.rectangle(overlay, (tx, ty), (tx + tw, ty + th), color, 3)
+
+    # Blend overlay onto original
+    cv2.addWeighted(overlay, 0.5, img, 0.5, 0, img)
+
+    # Text labels (drawn after blend so they're opaque)
+    for a in result.assignments:
+        tx, ty = a.tag.x, a.tag.y
+        label = a.equipment.id
+        pri = f"P{a.equipment.priority}"
+        rot = " ROT" if a.rotated else ""
+        cv2.putText(img, f"{label} {pri}{rot}", (tx, ty - 5),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 0), 1, cv2.LINE_AA)
+
+    # Summary overlay top-left
+    filename = Path(result.floorplan_path).name
+    rotated_count = sum(1 for a in result.assignments if a.rotated)
+    lines = [
+        filename,
+        f"Assignments: {result.num_assignments} ({rotated_count} rotated)",
+        f"Mean cost: {result.mean_cost:.6f}",
+    ]
+    for i, line in enumerate(lines):
+        cv2.putText(img, line, (10, 20 + i * 18),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2, cv2.LINE_AA)
+        cv2.putText(img, line, (10, 20 + i * 18),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1, cv2.LINE_AA)
+
+    cv2.imwrite(output_path, img)
+    return output_path
 
 
 def render_top_n(n: int = 5, output_dir: str = "output") -> List[str]:
-    """
-    Full pipeline: process all floor plans, render the top N by mean cost.
+    """Process all floorplans, render top N by mean cost."""
+    os.makedirs(output_dir, exist_ok=True)
+    results = find_all_results()
+    top = results[:n]
 
-    Steps:
-      1. Run find_all_results()
-      2. Take the top N (lowest mean cost)
-      3. For each, call render_placement() saving to:
-         output_dir/rank_1_<floorplan_name>.png
-         output_dir/rank_2_<floorplan_name>.png
-         ...
-      4. Print a summary table to stdout showing rank, floor plan name,
-         number of tags, and mean cost.
+    print(f"{'Rank':<6}{'Floor Plan':<25}{'Tags':<6}{'Mean Cost':<12}")
+    print("-" * 49)
 
-    Args:
-        n: Number of top results to render (default 5).
-        output_dir: Directory to write annotated PNGs.
+    paths = []
+    for i, result in enumerate(top, start=1):
+        name = Path(result.floorplan_path).stem
+        out_path = os.path.join(output_dir, f"rank_{i}_{name}.png")
+        render_placement(result, out_path)
+        paths.append(out_path)
+        print(f"{i:<6}{name:<25}{result.num_assignments:<6}{result.mean_cost:<12.6f}")
 
-    Returns:
-        List of output file paths for the rendered images.
-
-    TODO: Implement this function.
-    """
-    raise NotImplementedError("Implement render_top_n()")
+    return paths
