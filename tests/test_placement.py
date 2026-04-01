@@ -10,7 +10,7 @@ Run with: pytest tests/test_placement.py -v
 
 import pytest
 import time
-from src.models import BoundingBox, Equipment, PlacementResult, Assignment
+from src.models import Rect, Equipment, PlacementResult, Assignment
 from src.placement import assign_equipment
 from src.loader import load_equipment
 
@@ -24,9 +24,9 @@ def equipment():
 def sample_tags():
     """A small set of tags with varied aspect ratios."""
     return [
-        BoundingBox(x=0, y=0, width=100, height=100),   # AR = 1.0
-        BoundingBox(x=0, y=0, width=200, height=100),   # AR = 2.0
-        BoundingBox(x=0, y=0, width=50, height=100),    # AR = 0.5
+        Rect(x=0, y=0, width=100, height=100),   # AR = 1.0
+        Rect(x=0, y=0, width=200, height=100),   # AR = 2.0
+        Rect(x=0, y=0, width=50, height=100),    # AR = 0.5
     ]
 
 
@@ -50,7 +50,7 @@ class TestBasicProperties:
         result = assign_equipment(sample_tags, equipment)
         for a in result.assignments:
             assert isinstance(a, Assignment)
-            assert isinstance(a.tag, BoundingBox)
+            assert isinstance(a.tag, Rect)
             assert isinstance(a.equipment, Equipment)
             assert isinstance(a.cost, (int, float))
             assert isinstance(a.rotated, bool)
@@ -62,7 +62,7 @@ class TestBasicProperties:
 
     def test_handles_more_tags_than_equipment(self):
         """When tags outnumber equipment, assign what you can."""
-        tags = [BoundingBox(x=0, y=i * 100, width=100, height=100) for i in range(10)]
+        tags = [Rect(x=0, y=i * 100, width=100, height=100) for i in range(10)]
         eq = [
             Equipment(id="EQ-1", name="A", width=100, height=100, priority=3),
             Equipment(id="EQ-2", name="B", width=200, height=100, priority=2),
@@ -74,7 +74,7 @@ class TestBasicProperties:
         result = assign_equipment([], equipment)
         assert result.num_assignments == 0
 
-        tags = [BoundingBox(x=0, y=0, width=100, height=100)]
+        tags = [Rect(x=0, y=0, width=100, height=100)]
         result = assign_equipment(tags, [])
         assert result.num_assignments == 0
 
@@ -85,7 +85,7 @@ class TestRotation:
     def test_rotates_when_clearly_better(self):
         """If rotating gives a perfect match, the algorithm should rotate."""
         # Tag is tall and narrow: AR = 0.5
-        tags = [BoundingBox(x=0, y=0, width=50, height=100)]
+        tags = [Rect(x=0, y=0, width=50, height=100)]
 
         # Equipment is wide: AR = 2.0 → rotated AR = 0.5 (perfect match!)
         eq = [Equipment(id="ROTME", name="R", width=200, height=100, priority=3)]
@@ -98,7 +98,7 @@ class TestRotation:
 
     def test_does_not_rotate_when_unnecessary(self):
         """If the normal orientation is already a good fit, don't rotate."""
-        tags = [BoundingBox(x=0, y=0, width=200, height=100)]  # AR = 2.0
+        tags = [Rect(x=0, y=0, width=200, height=100)]  # AR = 2.0
         eq = [Equipment(id="NOROT", name="N", width=200, height=100, priority=3)]  # AR = 2.0
 
         result = assign_equipment(tags, eq)
@@ -110,11 +110,11 @@ class TestRotation:
     def test_rotation_used_in_real_data(self, equipment):
         """Across varied tags, at least some assignments should use rotation."""
         tags = [
-            BoundingBox(x=0, y=0, width=50, height=200),   # AR = 0.25
-            BoundingBox(x=0, y=0, width=200, height=50),   # AR = 4.0
-            BoundingBox(x=0, y=0, width=100, height=300),   # AR = 0.33
-            BoundingBox(x=0, y=0, width=300, height=100),   # AR = 3.0
-            BoundingBox(x=0, y=0, width=80, height=200),    # AR = 0.4
+            Rect(x=0, y=0, width=50, height=200),   # AR = 0.25
+            Rect(x=0, y=0, width=200, height=50),   # AR = 4.0
+            Rect(x=0, y=0, width=100, height=300),   # AR = 0.33
+            Rect(x=0, y=0, width=300, height=100),   # AR = 3.0
+            Rect(x=0, y=0, width=80, height=200),    # AR = 0.4
         ]
         result = assign_equipment(tags, equipment)
         rotated_count = sum(1 for a in result.assignments if a.rotated)
@@ -133,8 +133,8 @@ class TestPriority:
         """
         # Two tags with identical AR
         tags = [
-            BoundingBox(x=0, y=0, width=100, height=80),    # AR = 1.25
-            BoundingBox(x=0, y=200, width=100, height=80),   # AR = 1.25
+            Rect(x=0, y=0, width=100, height=80),    # AR = 1.25
+            Rect(x=0, y=200, width=100, height=80),   # AR = 1.25
         ]
         # Two equipment with SAME dimensions but DIFFERENT priority
         eq = [
@@ -160,7 +160,7 @@ class TestPriority:
         the optimizer work harder for high-priority items.
         """
         tags = [
-            BoundingBox(x=0, y=i * 100, width=50 + i * 30, height=100)
+            Rect(x=0, y=i * 100, width=50 + i * 30, height=100)
             for i in range(10)
         ]
         result = assign_equipment(tags, equipment)
@@ -169,7 +169,8 @@ class TestPriority:
         hi_errors, lo_errors = [], []
         for a in result.assignments:
             eq_ar = a.equipment.height / a.equipment.width if a.rotated else a.equipment.width / a.equipment.height
-            geo_error = (a.tag.aspect_ratio - eq_ar) ** 2
+            tag_ar = a.tag.width / a.tag.height
+            geo_error = (tag_ar - eq_ar) ** 2
             if a.equipment.priority >= 4:
                 hi_errors.append(geo_error)
             elif a.equipment.priority <= 2:
@@ -193,7 +194,7 @@ class TestPerformance:
     def test_handles_large_input(self, equipment):
         """100 tags + 300 equipment should complete in under 5 seconds."""
         large_tags = [
-            BoundingBox(x=0, y=0, width=max(20, 30 + i * 3), height=100)
+            Rect(x=0, y=0, width=max(20, 30 + i * 3), height=100)
             for i in range(100)
         ]
 
@@ -210,8 +211,8 @@ class TestPerformance:
     def test_cost_values_are_finite(self, equipment):
         """All costs should be finite numbers."""
         tags = [
-            BoundingBox(x=0, y=0, width=100, height=100),
-            BoundingBox(x=0, y=0, width=50, height=200),
+            Rect(x=0, y=0, width=100, height=100),
+            Rect(x=0, y=0, width=50, height=200),
         ]
         result = assign_equipment(tags, equipment)
         for a in result.assignments:

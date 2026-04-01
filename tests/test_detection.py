@@ -8,7 +8,7 @@ import pytest
 from pathlib import Path
 from src.loader import list_floorplans, load_ground_truth
 from src.detection import detect_tags
-from src.models import BoundingBox
+from src.models import Rect
 
 
 @pytest.fixture
@@ -29,7 +29,7 @@ class TestDetectTags:
         result = detect_tags(first_floorplan)
         assert isinstance(result, list)
         assert len(result) > 0, "Should detect at least one tag"
-        assert all(isinstance(bb, BoundingBox) for bb in result)
+        assert all(isinstance(bb, Rect) for bb in result)
 
     def test_bounding_boxes_have_positive_dimensions(self, first_floorplan):
         result = detect_tags(first_floorplan)
@@ -48,7 +48,8 @@ class TestDetectTags:
     def test_aspect_ratios_are_reasonable(self, first_floorplan):
         result = detect_tags(first_floorplan)
         for bb in result:
-            assert 0.1 < bb.aspect_ratio < 15.0, f"Unusual AR {bb.aspect_ratio:.2f}"
+            ar = bb.width / bb.height
+            assert 0.1 < ar < 15.0, f"Unusual AR {ar:.2f}"
 
     def test_all_floorplans_detectable(self, ground_truth):
         plans = list_floorplans()

@@ -7,34 +7,29 @@ from dataclasses import dataclass, field
 
 
 @dataclass
-class BoundingBox:
-    """A detected tag (equipment placement zone) on a floor plan."""
+class Rect:
+    """A rectangle detected in a floor plan image."""
     x: int
     y: int
     width: int
     height: int
 
     @property
-    def aspect_ratio(self) -> float:
-        """Width / Height ratio."""
-        return self.width / self.height
-
-    @property
     def area(self) -> int:
         return self.width * self.height
 
     def __repr__(self) -> str:
-        return f"BoundingBox(x={self.x}, y={self.y}, w={self.width}, h={self.height}, ar={self.aspect_ratio:.2f})"
+        return f"Rect(x={self.x}, y={self.y}, w={self.width}, h={self.height})"
 
 
 @dataclass
 class Equipment:
-    """A piece of equipment that needs to be placed into a tag zone."""
+    """A piece of equipment with physical dimensions and a priority level."""
     id: str
     name: str
     width: float
     height: float
-    priority: int  # 1–5, higher = more important to place well
+    priority: int  # 1–5
 
     def __repr__(self) -> str:
         return f"Equipment(id={self.id}, w={self.width}, h={self.height}, pri={self.priority})"
@@ -42,11 +37,11 @@ class Equipment:
 
 @dataclass
 class Assignment:
-    """A single equipment → tag assignment."""
-    tag: BoundingBox
+    """Maps one equipment item to one detected rectangle."""
+    tag: Rect
     equipment: Equipment
-    cost: float         # Candidate-defined cost of this assignment
-    rotated: bool       # Whether equipment was rotated 90° for this placement
+    cost: float
+    rotated: bool
 
     def __repr__(self) -> str:
         r = "R" if self.rotated else ""
@@ -55,7 +50,7 @@ class Assignment:
 
 @dataclass
 class PlacementResult:
-    """Result of placing equipment into all tags on a single floor plan."""
+    """Result of processing a single floor plan."""
     floorplan_path: str
     assignments: list = field(default_factory=list)  # List[Assignment]
 

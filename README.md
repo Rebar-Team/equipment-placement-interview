@@ -2,7 +2,9 @@
 
 ## Overview
 
-You're building a system that analyzes industrial floor plans to optimally place equipment. Each floor plan contains green rectangular **tags** — these are zones where equipment will be installed. You have a catalog of **300 equipment items**, each with physical dimensions and a priority level. Your goal is to determine the best assignment of equipment to zones, then **visually prove** your solution works by rendering annotated floor plans.
+You're building a system that analyzes industrial floor plans to optimally place equipment. Each floor plan contains bright green rectangular **tags** — these are zones where equipment will be installed. Both tags and equipment items are rectangles with width and height dimensions. You have a catalog of **300 equipment items**, each with physical dimensions and a priority level. Your goal is to determine the best assignment of equipment to tags, then **visually prove** your solution works by rendering annotated floor plans.
+
+The mapping between tags and equipment is **one-to-one**: each tag receives exactly one equipment item, and each equipment item can be assigned to at most one tag. Since there are far more equipment items than tags per floor plan, choosing the right equipment for each tag is the core optimization challenge.
 
 ## Setup
 
@@ -12,7 +14,7 @@ pip install -r requirements.txt
 
 ## The Data
 
-**`data/floorplans/`** — 20 PNG floor plan images (1200×900 px). Each contains 5–15 bright green rectangles representing equipment placement zones (tags).
+**`data/floorplans/`** — 20 PNG floor plan images (1200×900 px). Each contains 5–15 bright green rectangles representing equipment placement tags.
 
 **`data/equipment.json`** — 300 equipment entries. Each has:
 
@@ -34,9 +36,9 @@ Implement functions across three files. A test suite of **38 tests** validates y
 
 ### Part 1: Tag Detection (~12 min) → `src/detection.py`
 
-Implement `detect_tags(image_path) -> List[BoundingBox]`
+Implement `detect_tags(image_path) -> List[Rect]`
 
-Detect the green rectangular tags in a floor plan PNG and return their bounding boxes. The images contain visual noise (walls, grid lines, room labels) that you should ignore.
+Detect the green rectangular tags in a floor plan PNG and return their bounding rectangles. The images contain visual noise (walls, grid lines, room labels) that you should ignore.
 
 ```
 pytest tests/test_detection.py -v
@@ -48,17 +50,9 @@ pytest tests/test_detection.py -v
 
 Implement `assign_equipment(tags, equipment, floorplan_path) -> PlacementResult`
 
-Given detected tags and the equipment catalog, determine the optimal assignment of equipment to zones. Minimize placement error across all assignments.
+Given detected tags and the equipment catalog, assign equipment to tags to minimize total placement cost. Equipment can be **rotated 90°** if it improves the fit. Your solution must process all 20 floor plans in **under 10 seconds total**.
 
-**Things you need to decide:**
-- How to define the cost of assigning a given equipment item to a given tag
-- Equipment can be **rotated 90°** — you must decide when rotation improves the fit
-- Equipment has **priority levels** — your cost function should account for this
-- There are more equipment items (300) than tags (5–15 per plan) — not all equipment will be placed
-- Each equipment can be assigned to at most one tag; each tag gets at most one equipment
-- Your solution must process all 20 floor plans in **under 10 seconds total**
-
-Populate each `Assignment` with your computed `cost` and whether the equipment is `rotated`.
+Read `src/models.py` and the test suite carefully — they define the structure and behavioral expectations of a correct solution.
 
 ```
 pytest tests/test_placement.py -v
@@ -70,12 +64,9 @@ pytest tests/test_placement.py -v
 
 Implement all five functions:
 
-**Orchestration** — `find_all_results()` and `find_best_floorplan()` to run detection + placement across all floor plans and identify the best one.
+**Orchestration** — `find_all_results()` and `find_best_floorplan()` to run detection + placement across all floor plans and identify the best results.
 
-**Visualization:**
-- `cost_to_color(cost, max_cost)` — map a cost value to a green→yellow→red BGR color gradient
-- `render_placement(result, output_path)` — annotate the original floor plan image with color-coded borders per tag, equipment labels (ID, priority, rotation status), and a summary overlay
-- `render_top_n(n, output_dir)` — full pipeline: process all plans, render the top N, print a summary table
+**Visualization** — Color-code the quality of each assignment and render annotated floor plans that visually demonstrate how well equipment fits into each tag. Include a `cost_to_color()` helper, a `render_placement()` function, and a `render_top_n()` pipeline that processes and renders the best results.
 
 ```
 pytest tests/test_integration.py -v
@@ -87,7 +78,7 @@ pytest tests/test_integration.py -v
 
 | File | What it does |
 |---|---|
-| `src/models.py` | Data classes: `BoundingBox`, `Equipment`, `Assignment`, `PlacementResult` |
+| `src/models.py` | Data classes: `Rect`, `Equipment`, `Assignment`, `PlacementResult` |
 | `src/loader.py` | Loads equipment JSON and lists floor plan paths |
 | `tests/` | Full test suite (38 tests) |
 | `run.py` | Runner script to execute the full pipeline and view rendered results |
@@ -124,5 +115,4 @@ Output images are saved to `output/`. Open them to visually verify your assignme
 ## Notes
 
 - Use of AI coding tools is **encouraged**. We evaluate how you work with AI, not memorization.
-- `scipy` and `sortedcontainers` are available if you want them.
 - Start with Part 1, run those tests, then move forward. Part 3 builds on Parts 1 and 2.
